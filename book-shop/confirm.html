@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Roboto&family=Source+Sans+Pro&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="images/favicon.png">
+    <title>Book Shop: Confirm</title>
+  </head>
+<body class="body confirm">
+  <div class="form-container">
+    <a href="./index.html" class="hover-close"><div class="hover-text left">Hover here</div></a>
+    <button class="hover-confirm" disabled><div class="hover-text right">Hover here</div></button>
+    <form class="form" action="">
+      <div class="form__close">
+        <div class="close-form-btn">
+          <div class="text-close">Close</div>
+        </div>
+      </div>
+      <div class="scene">
+        <div class="first-info">
+          <div class="info-item">
+            <label for="name" class="form__text-items">Name</label>
+            <input class="form__name inp" id="name" type="text" pattern = "[A-Za-z]{4,}" required>
+          </div>
+          <div class="info-item">
+            <label for="surname" class="form__text-items">Surname</label>
+            <input class="form__name inp" id="surname" type="text" pattern = "[A-Za-z]{5,}" required>
+          </div>
+          <div class="info-item">
+            <label for="street" class="form__text-items">Street</label>
+            <input class="form__street inp" id="street" type="text" pattern = "[A-Za-z0-9]{5,}" required>
+          </div>
+          <div class="info-item">
+            <label for="home-num" class="form__text-items">House number</label>
+            <input class="form__home-num inp" id="home-num" type="text" pattern = "[0-9]{1,}" required>
+          </div>
+          <div class="info-item">
+            <label for="flat" class="form__text-items">Flat number</label>
+            <input class="form__flat inp" id="flat" type="text" pattern = "[0-9-]{1,}" required>
+          </div>
+          <div class="info-item">
+            <label for="date" class="form__text-items">Delivery date</label>
+            <input class="form__date inp" id="date" type="date" pattern = "{1,}" required>
+          </div>
+        </div>
+
+        <div class="form__pay-container">
+          <p class="pay-type">Choose the payment type</p>
+          <div class="pay">
+            <input type="radio" class="form__pay" name="pay" id="card" required>
+            <label for="card">Card</label>
+          </div>
+          <div class="pay">
+            <input type="radio" class="form__pay" name="pay" id="cash" required>
+            <label for="cash">Cash</label>
+          </div>
+        </div>
+
+        <div class="form__gift-container">
+          <p class="gift-text">Choose 2 gifts</p>
+          <div class="box">
+            <input type="checkbox" class="checkbox" id="check1" required>
+            <label for="check1" class="checkbox-text">pack as a gift</label>
+          </div>
+          <div class="box">
+            <input type="checkbox" class="checkbox" id="check2" required>
+            <label for="check2" class="checkbox-text">add postcard</label>
+          </div>
+          <div class="box">
+            <input type="checkbox" class="checkbox" id="check3" required>
+            <label for="check3" class="checkbox-text">provide 2% discount to the next time</label>
+          </div>
+          <div class="box">
+            <input type="checkbox" class="checkbox" id="check4" required>
+            <label for="check4" class="checkbox-text">branded pen or pencil</label>
+          </div>
+        </div>
+      </div>
+      <div class="form__confirm">
+        <div class="confirm-btn">
+          Confirm
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="js/main.min.js"></script>
+</body>
+</html>
