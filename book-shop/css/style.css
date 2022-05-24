@@ -2028,7 +2028,7 @@ button {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: rgba(57, 222, 87, 0.777);
+  background-color: rgba(255, 255, 255, 0.777);
   -webkit-filter: drop-shadow(3px 6px 9px black);
           filter: drop-shadow(3px 6px 9px black);
   display: -webkit-box;
@@ -2044,8 +2044,8 @@ button {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  padding: 10px;
-  color: white;
+  padding: 20px;
+  color: rgb(58, 58, 58);
   font-size: 20px;
 }
 
