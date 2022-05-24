@@ -35,7 +35,7 @@ const checkHome = () => {
   const num = document.querySelector('.form__home-num');
 
   num.addEventListener('input', () => {
-    num.value = num.value.replace(/[^1-9]/g, '');
+    num.value = num.value.replace(/[^0-9]/g, '');
     invalidInput();
   })
 }
@@ -45,9 +45,9 @@ const checkFlat = () => {
 
   flat.addEventListener('input', () => {
     if (flat.value.length == 1) {
-      flat.value = flat.value.replace(/[^1-9]/g, '');
+      flat.value = flat.value.replace(/[^0-9]/g, '');
     } else {
-      flat.value = flat.value.replace(/[^1-9-]/g, '');
+      flat.value = flat.value.replace(/[^0-9-]/g, '');
     }
     invalidInput();
   })
