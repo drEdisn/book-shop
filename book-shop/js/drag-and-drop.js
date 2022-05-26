@@ -2,10 +2,9 @@ import { addToCart} from "./cart";
 
 
 const createDropArea = () => {
-  const container = document.querySelector('.container');
   const dropArea = document.createElement('div');
   dropArea.classList.add('drop-area');
-  container.append(dropArea);
+  return dropArea;
 }
 
 const moveAt = (e) => {
@@ -27,7 +26,7 @@ const dragItem = (img, arr) => {
   const drop = document.querySelector('.drop-area');
   const total = document.querySelector('.total-cost');
   const cart = document.querySelector('.cart-content');
-  let array = new Set();
+  
 
   img.onmousedown = (e) => {
     drop.classList.add('_drop-up');
@@ -47,6 +46,7 @@ const dragItem = (img, arr) => {
     drop.classList.remove('_drop-up');
     document.onmousemove = null;
     dropItem ? dropItem.remove() : null;
+    let array = new Set();
 
     if (e.target == drop) {
       if (cart.childNodes.length > 1) {

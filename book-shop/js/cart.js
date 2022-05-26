@@ -17,7 +17,7 @@ const createCart = () => {
     </div>
   `;
 
-  header.append(cart);
+  return cart;
 }
 
 const addToCart = (data, arr, total) => {
@@ -94,9 +94,10 @@ const clickToAddCart = (arr) => {
   const button = document.querySelector('.about__add-btn');
   const cart = document.querySelector('.cart-content');
   const total = document.querySelector('.total-cost');
-  let array = new Set();
+
 
   button.addEventListener('click', () => {
+    let array = new Set();
     if (cart.childNodes.length > 1) {
       cart.childNodes.forEach((i, ind) => {ind !== 0 ? array.add(i.dataset.item) : false});
     }

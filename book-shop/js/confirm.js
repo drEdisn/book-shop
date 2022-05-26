@@ -46,6 +46,8 @@ const checkFlat = () => {
   flat.addEventListener('input', () => {
     if (flat.value.length == 1) {
       flat.value = flat.value.replace(/[^0-9]/g, '');
+    } else if (flat.value.split('')[0] == "-") {
+      flat.value = flat.value.replace(/-/, '');
     } else {
       flat.value = flat.value.replace(/[^0-9-]/g, '');
     }

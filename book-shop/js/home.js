@@ -1,5 +1,4 @@
 export default function createHome() {
-  const main = document.querySelector('.main');
   const background = document.createElement('div');
   background.classList.add('home');
 
@@ -14,5 +13,5 @@ export default function createHome() {
       </div>
     </div>
   `
-  main.append(background);
+  return background;
 }

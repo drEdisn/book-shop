@@ -1,5 +1,6 @@
-export default function createHeader(container) {
+import {createCart} from './cart';
 
+export default function createHeader() {
   const header = document.createElement('header');
   header.classList.add('header');
 
@@ -59,8 +60,9 @@ export default function createHeader(container) {
   };
   
   setTimeout(() => {logo.classList.add('header__logo-open')});
-
+  menu.append(createCart());
   headContainer.append(logo, menu);
   header.append(headContainer);
-  container.append(header);
+
+  return header;
 }
