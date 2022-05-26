@@ -4,45 +4,37 @@ import createFooter from './footer';
 import animate from './animate-scroll';
 import createBookSection from './book-section';
 import {getBooks} from './add-book';
-import {createCart, toConfirm} from './cart';
+import {toConfirm} from './cart';
 import { createDropArea } from './drag-and-drop';
-import { invalidAll, checkDate, checkFlat, checkHome, checknameKey, checkStreet, checkAllInput, confirmClick, createInfo } from './confirm';
+import * as confirm from './confirm';
 
-const container = document.querySelector('.container');
+const body = document.querySelector('.body');
+const container = document.createElement('div');
+container.classList.add('container');
 
-const createMain = (container) => {
+const createMain = () => {
   const main = document.createElement('main');
   main.classList.add('main');
-  container.append(main);
+  main.append(createHome(), createBookSection());
+  return main;
 }
 
-if (container) {
-  createHeader(container);
-  createDropArea();
-  createCart();
-  createMain(container);
-  createHome();
-  createBookSection();
-  createFooter(container);
+if (!body.classList.contains('confirm')) {
+  container.append(createHeader(), createDropArea(), createMain(), createFooter());
+  body.append(container);
   getBooks();
   toConfirm();
   window.addEventListener('scroll', () => {animate();})
   window.onload = () => {
     if (sessionStorage.getItem('confirm') == 'true') {
       sessionStorage.setItem('confirm', 'false');
-      createInfo(container);
+      confirm.createInfo(container);
     }
   }
   setTimeout(() => {animate();});
 } else {
-  checknameKey();
-  checkDate();
-  checkStreet();
-  checkHome();
-  checkFlat();
-  invalidAll();
-  checkAllInput();
-  confirmClick();
+  const arr = ['checknameKey', 'checkDate', 'checkStreet', 'checkHome', 'checkFlat', 'checkAllInput', 'invalidAll', 'confirmClick'];
+  arr.forEach((i,ind,arr) => confirm[arr[ind]]())
 }
 
 

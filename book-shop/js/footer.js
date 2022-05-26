@@ -1,4 +1,4 @@
-export default function createFooter(container) {
+export default function createFooter() {
   const footer = document.createElement('footer');
   footer.classList.add('footer');
   footer.innerHTML = `
@@ -18,5 +18,5 @@ export default function createFooter(container) {
     </div>
   `;
 
-  container.append(footer);
+  return footer;
 }

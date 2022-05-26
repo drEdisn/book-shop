@@ -1,5 +1,4 @@
 export default function createBookSection() {
-  const main = document.querySelector('.main');
   const section = document.createElement('section');
   section.classList.add('books');
   section.innerHTML = `
@@ -22,5 +21,5 @@ export default function createBookSection() {
     </div>
   `;
 
-  main.append(section);
+  return section;
 }
